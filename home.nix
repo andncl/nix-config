@@ -29,7 +29,6 @@
     "Xcursor.size" = 16;
     "Xft.dpi" = 172;
   };
-
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # here is some command line tools I use frequently
@@ -99,6 +98,10 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+    whitesur-gtk-theme
+
+    gnome-network-displays
+    obsidian
   ];
 
   # basic configuration of git, please change to your own
@@ -174,6 +177,14 @@
       "shell" = "zsh";
       enable_audio_bell = "no";
       visual_bell_duration = "0.1";
+    };
+  };
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "WhiteSur-Dark-solid";
+      package = pkgs.whitesur-gtk-theme;
     };
   };
   # This value determines the home Manager release that your
